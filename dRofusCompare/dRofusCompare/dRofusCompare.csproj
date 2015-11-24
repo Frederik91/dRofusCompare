@@ -67,7 +67,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Assets\Comparer.cs" />
     <Compile Include="Assets\Reader.cs" />
+    <Compile Include="Models\DataComparison.cs" />
     <Compile Include="Models\DrawingData.cs" />
     <Compile Include="Models\dRofusData.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

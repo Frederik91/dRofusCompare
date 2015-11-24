@@ -36,9 +36,18 @@ namespace dRofusCompare.Assets
             var dRofusDataList = new List<dRofusData>();
             var fileContent = ReadData(path);
 
-            for (int i = 2; i < fileContent.Count - 1; i++)
+            for (int i = 0; i < fileContent.Count - 1; i++)
             {
                 var lineArray = fileContent[i].Split('\t');
+
+                for (int j = 0; j < lineArray.Length - 1; j++)
+                {
+                    if (lineArray[j] == "")
+                    {
+                        lineArray[j] = "0";
+                    }
+                }
+
                 dRofusDataList.Add(new dRofusData
                 {
                     Room = lineArray[0],
