@@ -18,7 +18,7 @@ namespace dRofusCompare.Assets
                 var DrawingRoom = DrawingDataList.FindAll(x => x.Room == dRofusRoom.Room);
 
                 var PowerValue = 0;
-                var DataValue = 0;
+                var TeleValue = 0;
 
                 foreach (var DrawingItem in DrawingRoom)
                 {
@@ -31,7 +31,7 @@ namespace dRofusCompare.Assets
                             PowerValue = 3;
                             break;
                         case ("000003T"):
-                            DataValue = 2;
+                            TeleValue = 2;
                             break;
                     }
 
@@ -41,8 +41,12 @@ namespace dRofusCompare.Assets
                 DataComparisonList.Add(new DataComparison
                 {
                     Room = dRofusRoom.Room,
-                    Power = dRofusRoom.Power - PowerValue,
-                    Data = dRofusRoom.Data - DataValue
+                    dRofusPower = dRofusRoom.Power,
+                    dRofusTele = dRofusRoom.Tele,
+                    DrawingPower = PowerValue,
+                    DrawingTele = TeleValue,
+                    DifferencePower = dRofusRoom.Power - PowerValue,
+                    DifferenceTele = dRofusRoom.Tele - TeleValue
                 });
                 
             }
@@ -52,7 +56,7 @@ namespace dRofusCompare.Assets
 
         public static List<DataComparison> RemoveOkRooms(List<DataComparison> TotalRoomList)
         {
-            return TotalRoomList.FindAll(x => x.Power > 0 || x.Data > 0);
+            return TotalRoomList.FindAll(x => x.DifferencePower > 0 || x.DifferenceTele > 0);
         }
     }
 }

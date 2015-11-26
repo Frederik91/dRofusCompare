@@ -32,9 +32,9 @@
     </Controls:MetroWindow.Flyouts>
 
     <Grid>
-        <ListView DataContext="{Binding NotOkRoomsList}">
+        <DataGrid DataContext="{Binding NotOkRoomsList}">
 
-        </ListView>
+        </DataGrid>
     </Grid>
 
 </Controls:MetroWindow>

@@ -12,7 +12,7 @@ namespace dRofusCompare.Models
         public int UPRI { get; set; }
         public int PRI { get; set; }
         public int UPS { get; set; }
-        public int Data { get; set; }
+        public int Tele { get; set; }
         public int Power { get { return UPRI + PRI + UPS; } }
     }
 }

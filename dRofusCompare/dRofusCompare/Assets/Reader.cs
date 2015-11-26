@@ -54,7 +54,7 @@ namespace dRofusCompare.Assets
                     UPRI = Convert.ToInt32(lineArray[1]),
                     PRI = Convert.ToInt32(lineArray[2]),
                     UPS = Convert.ToInt32(lineArray[3]),
-                    Data = Convert.ToInt32(lineArray[4])
+                    Tele = Convert.ToInt32(lineArray[4])
                 });
             }
 
